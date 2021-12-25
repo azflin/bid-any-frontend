@@ -1,13 +1,17 @@
 import { ethers } from "ethers";
 import React, { useState } from "react";
 
-export default function Home() {
+import bidAnyJson from "../abis/BidAny.json";
 
+const BID_ANY_ADDRESS = "0x36b15b89ccdecb831b79428d3a5ad608bdc9ec8d";
+
+export default function Home() {
   const [contractAddress, setContractAddress] = useState("");
   const [bid, setBid] = useState("");
 
   const placeBid = (contractAddress, bid) => {
-    console.log({ contractAddress, bid });
+    const contract = new ethers.Contract(BID_ANY_ADDRESS, bidAnyJson);
+    console.log(contract);
   };
 
   return (
@@ -29,4 +33,4 @@ export default function Home() {
       </div>
     </div>
   );
-};
+}
