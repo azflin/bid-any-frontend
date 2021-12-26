@@ -5,7 +5,7 @@ import bidAnyJson from "../abis/BidAny.json";
 
 const BID_ANY_ADDRESS = "0x36b15b89ccdecb831b79428d3a5ad608bdc9ec8d";
 
-export default function Home() {
+export default function Home({ signer, provider }) {
   const [contractAddress, setContractAddress] = useState("");
   const [bid, setBid] = useState("");
 
@@ -16,7 +16,6 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Bid Any</h1>
       <div>
         <input
           value={contractAddress}
