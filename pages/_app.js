@@ -72,7 +72,13 @@ function MyApp({ Component, pageProps }) {
           )}
         </div>
       </div>
-      <Component {...pageProps} provider={provider} signer={signer} />
+      <Component
+        {...pageProps}
+        provider={provider}
+        signer={signer}
+        connectMetamask={connectMetamask}
+        address={address}
+      />
     </>
   );
 }
